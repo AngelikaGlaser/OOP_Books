@@ -7,6 +7,8 @@ const form = document.querySelector("form");
 //events
 form.addEventListener('submit', addBook)
 document.addEventListener('DOMContentLoaded', getBooks)
+const bookList = document.querySelector("table")
+bookList.addEventListener('click', delBook)
 
 function getBooks(){
     let books = ls.getData('books')
@@ -38,6 +40,13 @@ function addBook(event) {
     AuthorInPut.value = ''
     ISBNInPut.value = ''
     event.preventDefault()
+}
 
-    document.getElementById('table').innerHTML += TableData;
+function delBook(event){
+    if (event.target.textContent === 'X'){
+        const book = ui.getBook(event.target)
+        if(ui.delBook(event.target) === true){
+            ls.delBook(book)
+        }
+    }
 }

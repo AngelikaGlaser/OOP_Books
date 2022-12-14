@@ -1,7 +1,7 @@
 class UI {
     // help function to add DOM el
 
-    addUIElement(name, classname = '', textcontent = '', atributes = {}){
+    addUIElement(name, classname = '', textcontent = '', attributes = {}){
         // create el
         const element = document.createElement(name)
         // add cc style to el
@@ -10,10 +10,10 @@ class UI {
         }
         //add text to el
         element.appendChild(document.createTextNode(textcontent))
-        // add atrubutes to el
-        if(Object.keys(atributes).length > 0){
-            for(let key in atributes){
-                element.setAttribute(key, atributes[key])
+        // add attributes to el
+        if(Object.keys(attributes).length > 0){
+            for(let key in attributes){
+                element.setAttribute(key, attributes[key])
             }
         }
         return element
@@ -41,5 +41,21 @@ class UI {
         //add tr to tbody
         const booksList = document.querySelector('#books-list')
         booksList.appendChild(tr)
+    }
+    delBook(click){
+        if(confirm('Do you really want to delete this?')){
+            click.parentElement.parentElement.remove()
+            return true
+        }else{
+            return false
+        }
+    }
+
+    getBook(click){
+        let title = click.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.textContent
+        let author = click.parentElement.previousElementSibling.previousElementSibling.textContent
+        let isbn = click.parentElement.previousElementSibling.textContent
+        const book = new Book(title, author, isbn)
+        return book
     }
 }
