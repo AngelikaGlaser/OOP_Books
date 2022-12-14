@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books project</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+</head>
+<body>
+<div class="container">
+<!-- Page Content goes here -->
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title" style="font-size: xxx-large; font-weight: normal">Add Books</span>
+                <div class="class row">
+                    <form class="col s12" id="add-book">
+                        <div class="row">
+                            <div class="input field col s12">
+                                <label for="title" style="font-size: medium; font-weight: bold">Title</label>
+                                <input type="text" id="title" style="border: solid 1px lightgray">
+                                <label for="author" style="font-size: medium; font-weight: bold">Author</label>
+                                <input type="text" id="author" style="border: solid 1px lightgray">
+                                <label for="ISBN" style="font-size: medium; font-weight: bold">ISBN#</label>
+                                <input type="text" id="ISBN" style="border: solid 1px lightgray">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div>
+                                <input type="submit" class="btn" style="width:100%; height: 30px" value="SUBMIT">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card-action">
+                <table id="table">
+                    <tr class="book-row">
+                        <th class="title">Title</th>
+                        <th class="author">Author</th>
+                        <th class="isbn">ISBN</th>
+                        <th class="last-cell"></th>
+                    </tr>
+                    <tr class="book-row">
+                        <td class="title">Tõde ja Õigus</td>
+                        <td class="author">A.H. Tammsaare</td>
+                        <td class="isbn">123789</td>
+                        <td class="last-cell"><a href="#" class="secondary-content">X</a></td>
+                    </tr>
+                    <tr class="book-row">
+                        <td class="title">Naksitrallid</td>
+                        <td class="author">Eno Raud</td>
+                        <td class="isbn">124678</td>
+                        <td class="last-cell"><a href="#" class="secondary-content">X</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="classes/Book.js"></script>
+<script src="classes/UI.js"></script>
+<script src="classes/LS.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
